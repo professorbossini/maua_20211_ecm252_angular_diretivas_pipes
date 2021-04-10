@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'diretivas-pipes';
+  lembrete: string;
+  lembretes: Array<string> = [];
+
+  salvar(){
+    //spread operator ...
+    this.lembretes = [this.lembrete, ...this.lembretes];
+    this.lembrete = "";
+  }
 }
+
+
